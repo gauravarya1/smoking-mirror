@@ -22,6 +22,12 @@ angular.module('app.routes', [])
     controller: 'loginCtrl'
   })
 
+  .state('poem', {
+    url: '/poem',
+    templateUrl: 'templates/poem.html',
+    controller: 'poemCtrl'
+  })
+
   .state('signup', {
     url: '/signup',
     templateUrl: 'templates/signup.html',
