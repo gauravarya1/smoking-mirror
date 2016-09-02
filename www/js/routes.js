@@ -17,15 +17,23 @@ angular.module('app.routes', [])
   })
 
   .state('login', {
+
     url: '/login',
     templateUrl: 'templates/login.html',
     controller: 'loginCtrl'
   })
 
   .state('poem', {
+    cache:false,
     url: '/poem',
     templateUrl: 'templates/poem.html',
     controller: 'poemCtrl'
+  })
+
+  .state('alphabets', {
+    url: '/alphabets',
+    templateUrl: 'templates/alphabets.html',
+    controller: 'alphabetsCtrl'
   })
 
   .state('signup', {

@@ -1,6 +1,6 @@
-<ion-view style="" id="login" title="Login">
-    <ion-content class="has-header" scroll="false" padding="true">
-        <form class="list " ng-submit=submit() id="login-form1" novalidate>
+<ion-view style="" class="login-with-bg" id="login" title="Login">
+    <ion-content class="has-header view-content" scroll="false" padding="true">
+        <form class="list" ng-submit=submit() id="login-form1" novalidate>
             <ion-list id="login-list1">
                 <label id="login-input1" class="item item-input ">
                     <span class="input-label">Username</span>
@@ -12,8 +12,8 @@
                 </label>
             </ion-list>
             <div style="height: 40px;" class="spacer"></div>
-            <input class=" button button-positive  button-block " id="login-button1" type="Submit" value="Login">
-            <a class=" button button-positive  button-block button-clear " id="login-button2" ui-sref="signup">Or create an account</a>
+            <input class=" button button-block  button-dark" id="login-button1" type="Submit" value="Login">
+            <a class=" button button-royal  button-block button-outlined " id="login-button2" ui-sref="signup">Or create an account</a>
         </form>
     </ion-content>
 </ion-view>

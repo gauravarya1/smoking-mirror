@@ -1,14 +1,19 @@
-<ion-view style="" id="page4" title="Home">
-    <ion-content class="has-header " padding="true">
+<ion-view class="view-with-bg" style="" id="page4" title="Home">
+    <ion-content class="has-header view-content" padding="true">
 
-<div class="list">
+<ion-list >
+  <ion-item ng-repeat="item in items"
+            class="item-thumbnail-left">
 
-    <a class="item item-thumbnail-left" ui-sref="poem">
-      <img src="img/Armadillo.png">
-      <h2>Animals</h2>
-      <p>Adabadaba the Armadillo.. </p>
-    </a>
-</div>
+    <img ng-src="{{item.img}}" ng-click="setCategory(item.title)">
+    <h2 ng-click="setCategory(item.title)">{{item.title}}</h2>
+    <p>{{item.description}}</p>
+    
+
+  </ion-item>
+</ion-list>
+
+
 
 </ion-content>
 </ion-view>
