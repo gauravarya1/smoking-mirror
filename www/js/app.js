@@ -71,7 +71,7 @@ module.controller('loginCtrl', function($scope, $http, $ionicPopup, $location) {
 
     })
     .error(function(data, status, headers,config){
-      alert('data error'+status);
+      alert("We can't connect to the server right now. Please Try later or check your internet connection");
     })
          // 
 
@@ -126,6 +126,17 @@ module.controller('alphabetsCtrl', function($scope, $http, $ionicPopup, $locatio
 
 //Poem Page
 module.controller('poemCtrl', function($scope, $http, $ionicPopup, $location) {
+  $scope.images=[
+                {
+                  url:"img/Armadillo.png",
+                  description: "Armadillo"
+                },
+                {
+                  url:"img/Armadillo.png",
+                  description: "Armadillo2"
+                },
+  ];
+
   $scope.poem=[
        "Adabadaba was an Armadillo always blue and sad, \n He wanted to be strong and tall ever so bad. \nBut all he had on was this funny body armor, \n The Aye-Aye and Anoa found it strange – he was no charmer.",
         "So he went to the Aardvark, they tried to pull it off in vain, \n The Antelope and the Addax thought it to be a bane.\n What to do – how do I, become not strange but mighty? \n He tried asking the Anteater, but she was just too flighty.",
@@ -134,4 +145,6 @@ module.controller('poemCtrl', function($scope, $http, $ionicPopup, $location) {
         "Said the Alpaca to Adabadaba, this is indeed a great trick,\n Your armor is awesome, it protects you from cuts and nicks.\n No longer did Adabadaba want to be tall and towering, \n His mighty Armadillo armor was very, very empowering. "
     ];
 
+    
+    
   });

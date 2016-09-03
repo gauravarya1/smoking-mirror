@@ -1,0 +1,21 @@
+  
+<ion-view style="" id="poem" title="poem">
+    <ion-content scroll="true" class="has-header" padding="true">
+  
+	
+ <ion-slide-box>
+  <ion-slide ng-repeat="item in poem" >
+   <div class="poem-box img-responsive"> <pre>{{item}} </pre></div>
+  </ion-slide>
+</ion-slide-box>
+
+<ion-slide-box>
+  <ion-slide ng-repeat="item in images" >
+   
+   <div class="animal-box"> <img src="{{item.url}}" style="max-height:100px; max-width:100px;"> <span>{{item.description}} </span></div>
+  </ion-slide>
+</ion-slide-box>
+
+	
+</ion-content>
+</ion-view>

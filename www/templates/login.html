@@ -4,15 +4,15 @@
             <ion-list id="login-list1">
                 <label id="login-input1" class="item item-input ">
                     <span class="input-label">Username</span>
-                    <input type="text" name="uname" ng-model="data.uname"  placeholder="Enter Username" ng-minlength="5" required >
+                    <input class="trans-input" type="text" name="uname" ng-model="data.uname"  placeholder="Enter Username" ng-minlength="5" required >
                 </label>
                 <label id="login-input2" class="item item-input ">
                     <span class="input-label">Password</span>
-                    <input type="password" name="pwd" ng-model="data.pwd" placeholder="Enter Password" ng-minlength="5" required>
+                    <input  type="password" name="pwd" ng-model="data.pwd" placeholder="Enter Password" ng-minlength="5" required>
                 </label>
             </ion-list>
             <div style="height: 40px;" class="spacer"></div>
-            <input class=" button button-block  button-dark" id="login-button1" type="Submit" value="Login">
+            <input  class=" button button-block  button-dark" id="login-button1" type="Submit" value="Login">
             <a class=" button button-royal  button-block button-outlined " id="login-button2" ui-sref="signup">Or create an account</a>
         </form>
     </ion-content>
