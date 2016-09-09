@@ -34,55 +34,70 @@ var module=angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app
 
 
 module.controller('loginCtrl', function($scope, $http, $ionicPopup, $location) {
+
     $scope.data = {};
     $scope.users={};
+
+//if('yes'==localStorage.getItem('login'))
+   //$location.path('/home');
  
     $scope.submit = function(){
-       // var link = 'http://nikola-breznjak.com/_testings/ionicPHP/api.php';
-       
-       
-       /* $http.get('http://app.planeers.com/api.php/user').success(function(cards){
-  var alertPopup = $ionicPopup.alert({
-                title: 'ABC',
-                template: JSON.parse(cards);
-            });
-}).error(function(error) {
-  alert(error);
-});*/
 
-
-        if (($scope.data.uname =="username") && ($scope.data.pwd=="passwd"))
-          { 
-            $http.get('http://app.planeers.com/api.php/user?filter[]=username,eq,'+$scope.data.uname+'&filter[]=password,eq,'+$scope.data.pwd+'&columns=username&transform=1')
-    .success(function(data, status, headers,config){
-     var userss=JSON.stringify(data);
-     userss=userss.split('[');
-     userss=userss[1].split(']');
-     userss=userss[0];
-      obj = JSON && JSON.parse(userss) || $.parseJSON(userss);
-       $scope.users=obj;
-
-      
-      if(obj.username==$scope.data.uname)
-      $location.path('/home');
-
-       // for browser console
-      // for UI
-
-    })
-    .error(function(data, status, headers,config){
-      alert("We can't connect to the server right now. Please Try later or check your internet connection");
-    })
-         // 
-
-          }
-          else  {
-            var alertPopup = $ionicPopup.alert({
-              title: 'Login failed!',
-            template: 'Please check your credentials!'
-            });
+      if($scope.data.uname.length<5)
+     {   var confirmPopup = $ionicPopup.error({
+     title: 'Invalid Username or Password',
+     template: 'Please make sure your username and password are more than 5 characters.'
+   });
+    }
+  else{
+        var dataString = 'username='+ $scope.data.uname + '&password='+ $scope.data.pwd;
+              $.ajax({
+        type: "POST",
+        url: "http://app.planeers.com/login.php",
+        data: dataString,
+        cache: false,
+        success: function(result){
+        alert(result);
         }
-        //$http.post(link, {username : $scope.data.username}).then(function (res){
+        });
+      }
+      /*alert($scope.data.pwd);
+var data = $.param({
+                username: $scope.data.uname,
+                password: $scope.data.pwd,
+                
+            });
+        
+            var config = {
+                headers : {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*;q=0.8',
+                    "Access-Control-Allow-Origin":"*"
+                     }
+            }
+            $http.post('http://app.planeers.com/login.php/', data, config).then(function(res)
+          {alert(res.data);
+          },function(res)
+          {alert("failed");
+        });
+
+         /*   $http.post('http://app.planeers.com/login.php/', data, config)
+            .success(function(data,status,headers,config)
+            {
+                //$scope.PostDataResponse = data;
+                alert("success"+JSON.stringify(data));
+            }).error(function(data,status,header,config)
+            {
+                //$scope.ResponseDetails = "Data: " + data +
+                 //   "<hr />status: " + status +
+                   // "<hr />headers: " + header +
+                    //"<hr />config: " + config;
+                    alert('failure'+JSON.stringify(data));
+            });
+        
+*/
+       
+
          
         }
     
@@ -108,15 +123,33 @@ $location.path('/alphabets');
 
 
 //Alphabets Page
-module.controller('alphabetsCtrl', function($scope, $http, $ionicPopup, $location) {
- $scope.alphabets = [
-        "A",
-        "B",
-        "C"
+module.controller('alphabetsCtrl', function($scope, $location) {
+  $scope.colors = ['#673ab7', '#3f51b5', '#99cc00', '#03a9f4', '#00bcd4', '#009688','#673ab7', '#009688','#673ab7', '#ff3399', '#2196f3', '#03a9f4', '#00bcd4', '#009688','#3f51b5', '#ff6600', '#ff3399', '#00bcd4', '#009688','#673ab7', '#3f51b5', '#2196f3', '#03a9f4', '#00bcd4', '#99cc00', '#ff6600'];
+  $scope.alphabets = [
+        "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O",
+        "P","Q","R","S","T","U","V","W","X","Y","Z"
     ];
+var a=0;
+    $scope.getRandomColor = function() {
+       // var randomNumber = ;
+       // console.log(randomNumber)
+            
+       if (a>25)
+        {a=0;}
+        return $scope.colors[a++];
+
+      };
+
+      
+
+
+
+
+ 
 
     $scope.getPlaylist = function(id) {
         localStorage.setItem('alphabet', id);
+        
         $location.path('/poem');
 
     }

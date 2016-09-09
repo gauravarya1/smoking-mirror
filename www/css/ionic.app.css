@@ -9739,17 +9739,15 @@ a.button {
   background-image: url("../img/Back/j2.jpg");
   background-size: cover; }
 
-.login-with-bg .view-content {
-  background-image: url("../img/Back/Green.png");
-  background-size: cover; }
-
 .poem-box {
-  padding: 80px;
+  margin: 80px;
+  padding: 20px;
   color: #000;
   background-image: url("../img/Back/poemframe.gif");
   text-align: center;
   background-size: 800px 600px;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 25px;
+  font-family: Sans-Serif;
   font-weight: 900; }
 
 .animal-box {
@@ -9774,3 +9772,14 @@ a.button {
 .login-with-bg .view-content {
   background-image: url("../img/Back/j2.jpg");
   background-size: cover; }
+
+.alpha-button {
+  margin: 5px !important;
+  color: #ffffff !important;
+  font-size: 18px;
+  font-weight: 900; }
+
+.button-bar.button-bar-inline:before, .button-bar.button-bar-inline:after {
+  display: inline !important;
+  content: "";
+  line-height: 0px; }

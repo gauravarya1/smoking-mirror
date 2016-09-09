@@ -3,14 +3,16 @@
     <ion-content class="has-header" padding="true">
 
 	   
-          <ion-list>
-  <ion-item ng-repeat="item in alphabets" ng-click="getPlaylist(x)">
-    {{item}}
-  </ion-item>
-</ion-list>
+<div  ng-repeat="item in alphabets" ng-click="getPlaylist(item)" class="button-bar button-bar-inline">
+  <a class="button alpha-button" ng-style="{'background-color': getRandomColor() }" >{{item}}</a>
+  
+</div>
 
 
-
+<div class="row responsive-sm" style="display:inline-block">
+  <div class="col"  ng-click="getPlaylist(item)">{{item}}</div>
+  
+</div>
            
    
 </ion-content>

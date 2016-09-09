@@ -1,0 +1,15 @@
+.alpha-button
+{
+	margin: 5px !important;
+	color: #ffffff !important;
+	 font-size: 18px;
+    font-weight: 900;
+}
+
+
+.button-bar.button-bar-inline:before, .button-bar.button-bar-inline:after 
+{
+     display: inline !important;
+      content: "";
+      line-height: 0px; 
+}
