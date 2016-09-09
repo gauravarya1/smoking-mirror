@@ -32,7 +32,7 @@ var module=angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app
 
 
 
-
+//------------------Controller for Login --------------------------------------------
 module.controller('loginCtrl', function($scope, $http, $ionicPopup, $location) {
 
     $scope.data = {};
@@ -41,10 +41,11 @@ module.controller('loginCtrl', function($scope, $http, $ionicPopup, $location) {
 //if('yes'==localStorage.getItem('login'))
    //$location.path('/home');
  
-    $scope.submit = function(){
+    $scope.submitLogin = function(){
 
-      if($scope.data.uname.length<5)
-     {   var confirmPopup = $ionicPopup.error({
+ 
+      if( (''+$scope.data.uname).length < 5)
+     {   var confirmPopup = $ionicPopup.alert({
      title: 'Invalid Username or Password',
      template: 'Please make sure your username and password are more than 5 characters.'
    });
@@ -61,50 +62,17 @@ module.controller('loginCtrl', function($scope, $http, $ionicPopup, $location) {
         }
         });
       }
-      /*alert($scope.data.pwd);
-var data = $.param({
-                username: $scope.data.uname,
-                password: $scope.data.pwd,
-                
-            });
-        
-            var config = {
-                headers : {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*;q=0.8',
-                    "Access-Control-Allow-Origin":"*"
-                     }
-            }
-            $http.post('http://app.planeers.com/login.php/', data, config).then(function(res)
-          {alert(res.data);
-          },function(res)
-          {alert("failed");
-        });
-
-         /*   $http.post('http://app.planeers.com/login.php/', data, config)
-            .success(function(data,status,headers,config)
-            {
-                //$scope.PostDataResponse = data;
-                alert("success"+JSON.stringify(data));
-            }).error(function(data,status,header,config)
-            {
-                //$scope.ResponseDetails = "Data: " + data +
-                 //   "<hr />status: " + status +
-                   // "<hr />headers: " + header +
-                    //"<hr />config: " + config;
-                    alert('failure'+JSON.stringify(data));
-            });
-        
-*/
-       
+      
 
          
         }
     
 });
 
+//------------------Controller for Login Ends --------------------------------------------
 
 
+//------------------Controller for Categories Home --------------------------------------------
 module.controller('homeCtrl', function($scope, $http, $ionicPopup, $location) {
   $scope.items=[
         {
@@ -143,10 +111,6 @@ var a=0;
       
 
 
-
-
- 
-
     $scope.getPlaylist = function(id) {
         localStorage.setItem('alphabet', id);
         
@@ -155,9 +119,11 @@ var a=0;
     }
 });
 
+//------------------Controller for Categories Home Ends--------------------------------------------
 
 
-//Poem Page
+//------------------Controller for Poem Page --------------------------------------------
+
 module.controller('poemCtrl', function($scope, $http, $ionicPopup, $location) {
   $scope.images=[
                 {
@@ -181,3 +147,60 @@ module.controller('poemCtrl', function($scope, $http, $ionicPopup, $location) {
     
     
   });
+
+//------------------Controller for Poem Page  Ends--------------------------------------------
+
+
+
+
+//------------------Controller for Singup Page --------------------------------------------
+
+
+module.controller('signupCtrl', function($scope, $http, $ionicPopup, $location) {
+  $scope.user={};
+
+ $scope.submitSignup = function(){
+   
+
+
+ if(( (''+$scope.user.password)!=(''+$scope.user.password2) )||(''+$scope.user.password.length)<2) 
+     {   var confirmPopup = $ionicPopup.alert({
+     title: 'Password Mismatch',
+     template: 'Password and Confirm Password do not match'
+   });
+    }
+  else if((''+$scope.user.password).length>2) {
+    
+
+
+        var dataString = 'username='+ $scope.user.username
+                          + '&password='+ $scope.user.password
+                          + '&email=' + $scope.user.email
+                          + '&number=' + $scope.user.phone
+                          +'&name='+ $scope.user.name1 
+              $.ajax
+              ({
+                    type: "POST",
+                    url: "http://app.planeers.com/register.php/",
+                    data: dataString,
+                    cache: false,
+                 success: function(result)
+                 {
+                    var confirmPopup = $ionicPopup.alert
+                    ({
+                        title: 'Hi',
+                        template: result
+                    });
+                    
+                  }
+
+              });
+      }
+  
+  
+} //        
+
+  });
+
+
+//------------------Controller for Singup Page Ends --------------------------------------------

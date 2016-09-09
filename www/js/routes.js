@@ -23,6 +23,8 @@ angular.module('app.routes', [])
     controller: 'loginCtrl'
   })
 
+ 
+
   .state('poem', {
     cache:false,
     url: '/poem',
@@ -39,7 +41,7 @@ angular.module('app.routes', [])
   .state('signup', {
     url: '/signup',
     templateUrl: 'templates/signup.html',
-    controller: 'signupCtrl'
+    controller: 'signupCtrl' 
   })
 
   .state('home', {
