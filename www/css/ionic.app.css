@@ -9783,3 +9783,11 @@ a.button {
   display: inline !important;
   content: "";
   line-height: 0px; }
+
+.signuperror {
+  color: #04346b;
+  display: table;
+  font-size: 16px;
+  max-width: 300px;
+  padding: 0px 10px 0px 0px;
+  width: 72%; }

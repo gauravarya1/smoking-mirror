@@ -1,22 +1,22 @@
 <ion-view style="" id="signup" title="Signup">
     <ion-content class="has-header" padding="true">
-        <form class="list"  ng-submit="submitSignup()" id="signup-form2" >
+        <form class="list" name="signupForm"  ng-submit="submitSignup()" id="signup-form2" novalidate>
             <ion-list id="signup-list">
                 <label id="signup-input3"  class="item item-input ">
                     <span class="input-label">Name</span>
-                    <input placeholder="" name="name1" ng-model="user.name1" type="text" required>
+                    <input placeholder="" name="name1" ng-model="user.name1" ng-minlength="5" type="text" required>
                 </label>
                 <label id="signup-input4"  class="item item-input ">
                     <span class="input-label">Username</span>
-                    <input placeholder="" name="username" ng-model="user.username" type="text" required>
+                    <input placeholder="" name="username" ng-model="user.username" ng-minlength="5" type="text" required>
                 </label> 
                 <label id="signup-input5"  class="item item-input ">
                     <span class="input-label">Password</span>
-                    <input placeholder="" name="password" ng-model="user.password" type="password" required>
+                    <input placeholder="" name="password" ng-model="user.password" ng-minlength="6" type="password" required>
                 </label>
                 <label id="signup-input55"  class="item item-input ">
                     <span class="input-label">Confirm Password</span>
-                    <input placeholder="" name="password2" ng-model="user.password2" type="password" required>
+                    <input placeholder="" name="password2" ng-model="user.password2" ng-minlength="5" type="password" required>
                 </label>
                 <label id="signup-input6"  class="item item-input ">
                     <span class="input-label">Email</span>
@@ -26,6 +26,18 @@
                     <span class="input-label">Phone Number</span>
                     <input placeholder="" name="phone" ng-model="user.phone" type="text" required>
                 </label>
+                <div class="padding">
+             <p class="signuperror" ng-show="signupForm.name1.$error.required">* Name is required</p>
+             <p class="signuperror" ng-show="signupForm.name1.$error.minlength">* Name must be longer than 5 characters</p>
+            <p class="signuperror" ng-show="signupForm.username.$error.required">* Username is required</p>
+            <p class="signuperror" ng-show="signupForm.username.$error.minlength">* Username must be longer than 5 characters</p>
+            <p class="signuperror" ng-show="signupForm.password.$error.required">* Password is required</p>
+            <p class="signuperror" ng-show="signupForm.password.$error.minlength">* Password must be longer than 6 characters</p>
+            <p class="signuperror" ng-show="signupForm.password2.$error.required">* Confirm Password is required</p>
+            <p class="signuperror" ng-show="signupForm.email.$error.required">* Email is required</p>
+            <p class="signuperror" ng-show="signupForm.phone.$error.required">* Phone Number is required</p>
+            
+        </div>
             </ion-list>
              <input  class=" button button-block  button-dark" id="signup-button"  type="Submit" value="Signup">
         </form>
