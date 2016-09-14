@@ -23,13 +23,22 @@ angular.module('app.routes', [])
     controller: 'loginCtrl'
   })
 
- 
+  .state('signup', {
+    url: '/signup',
+    templateUrl: 'templates/signup.html',
+    controller: 'signupCtrl' 
+  })
 
-  .state('poem', {
-    cache:false,
-    url: '/poem',
-    templateUrl: 'templates/poem.html',
-    controller: 'poemCtrl'
+   .state('categoryLanding', {
+    url: '/categoryLanding',
+    templateUrl: 'templates/categoryLanding.html',
+    controller: 'categoryLandingCtrl'
+  })
+
+    .state('home', {
+    url: '/home',
+    templateUrl: 'templates/home.html',
+    controller: 'homeCtrl'
   })
 
   .state('alphabets', {
@@ -38,17 +47,21 @@ angular.module('app.routes', [])
     controller: 'alphabetsCtrl'
   })
 
-  .state('signup', {
-    url: '/signup',
-    templateUrl: 'templates/signup.html',
-    controller: 'signupCtrl' 
+.state('alphabetLanding', {
+    url: '/alphabetLanding',
+    templateUrl: 'templates/alphabetLanding.html',
+    controller: 'alphabetLandingCtrl'
   })
 
-  .state('home', {
-    url: '/home',
-    templateUrl: 'templates/home.html',
-    controller: 'homeCtrl'
+.state('poem', {
+    cache:false,
+    url: '/poem',
+    templateUrl: 'templates/poem.html',
+    controller: 'poemCtrl'
   })
+ 
+
+ 
 
 $urlRouterProvider.otherwise('/Index')
 
