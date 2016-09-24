@@ -1,0 +1,15 @@
+
+<ion-view class="view-with-bg" style="" id="wordsGlossary" title="Difficult Words Glossary">
+    <ion-content class="has-header view-content" padding="true">
+
+		<div class="list">
+
+		    <a class="item glossary-item" ng-repeat="word in words" >
+		          <h2>{{word.name}}</h2>
+		      <pre>{{word.desc}}</pre>
+		    </a>
+
+		</div>
+
+	</ion-content>
+</ion-view>

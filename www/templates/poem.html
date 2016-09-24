@@ -1,18 +1,19 @@
   
-<ion-view style="" id="poem" title="poem">
+<ion-view style="" id="poem" title="Alphabetastic">
     <ion-content scroll="true" class="has-header" padding="true">
   
-	
- <ion-slide-box>
-  <ion-slide ng-repeat="item in poem" >
-   <div class="poem-box "> <pre>{{item}} </pre></div>
+<h2 style="text-align:center;">{{poem_title}}</h2>	
+ <ion-slide-box> 
+
+  <ion-slide ng-repeat="item in poem" ng-init=updateSlider() >
+   <div class="poem-box "> <pre> <div ng-bind-html="item"></div> </pre></div>
   </ion-slide>
 </ion-slide-box>
 
 <ion-slide-box>
   <ion-slide ng-repeat="item in images" >
    
-   <div class="animal-box"> <img src="{{item.url}}" style="max-height:100px; max-width:100px;"> <span>{{item.description}} </span></div>
+   <div class="animal-box"> <img src="{{item.url}}" style="max-height:100px; max-width:100px;"> <span><h3>{{item.description}}</h3> </span></div>
   </ion-slide>
 </ion-slide-box>
 

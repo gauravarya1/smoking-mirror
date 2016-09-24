@@ -1,16 +1,24 @@
 .poem-box
 {
 	
-	 margin: 80px;
+	 margin-bottom:20px;
 padding: 20px;
   color: #000;
-  background-image: url('../img/Back/poemframe.gif');
+  background-image: url('../img/Back/poemframe.png');
+    background-repeat: no-repeat;
   text-align: center;
-  background-size: 800px 600px;
+  
  font-size: 25px;
-  font-family: Sans-Serif; 
+  font-family: Comic Sans MS; 
   font-weight: 900;
 
+}
+
+
+.poem-box pre
+{
+  margin:35px 30px 30px 45px;
+  line-height: 90%;
 }
 
 
@@ -41,3 +49,7 @@ padding: 20px;
   font-weight: 900;
 
 }
+
+
+.slider-slides 
+{  }

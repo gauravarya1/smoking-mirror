@@ -25,7 +25,19 @@
     border-radius: 50%; 
 }
 
-.glossary, .glossary h4
+.glossary
+{
+	margin-top: 50px;
+	color: #FFF;
+	position: unset;
+	display: block; 
+	margin-left: auto; 
+	margin-right: auto;
+	font-weight:900;
+	text-align:center;
+}
+
+.glossary h4
 {
 	color: #FFF;
 	position: unset;
@@ -33,6 +45,7 @@
 	margin-left: auto; 
 	margin-right: auto;
 	font-weight:900;
+
 }
 
 .glossary > img:first-child
@@ -45,7 +58,29 @@
     left: 16px;
     max-width: 215px;
     max-height: 80px;
-    width: 100%;
+    width: auto;
     height: 100%;
     border-radius: 50%; 
+}
+
+.btn {
+  background: #FF9900;
+  background-image: -webkit-linear-gradient(top, #FF9900, #fa7a12);
+  background-image: -moz-linear-gradient(top, #FF9900, #fa7a12);
+  background-image: -ms-linear-gradient(top, #FF9900, #fa7a12);
+  background-image: -o-linear-gradient(top, #FF9900, #fa7a12);
+  background-image: linear-gradient(to bottom, #FF9900, #fa7a12);
+  -webkit-border-radius: 13;
+  -moz-border-radius: 13;
+  border-radius: 13px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 18px;
+  padding: 10px 14px;
+  text-decoration: none;
+   line-height: 19px;
+}
+
+.btn:hover {
+  text-decoration: none;
 }
