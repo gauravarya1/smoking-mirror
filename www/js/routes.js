@@ -23,6 +23,14 @@ angular.module('app.routes', [])
     controller: 'loginCtrl'
   })
 
+.state('forgot', {
+
+    url: '/forgot',
+    templateUrl: 'templates/forgot.html',
+    controller: 'forgotCtrl'
+  })
+
+
   .state('signup', {
     url: '/signup',
     templateUrl: 'templates/signup.html',
@@ -47,11 +55,31 @@ angular.module('app.routes', [])
     controller: 'alphabetsCtrl'
   })
 
+  .state('payments', {
+    url: '/payments',
+    templateUrl: 'templates/payments.html',
+    controller: 'paymentsCtrl'
+  })
+
 .state('alphabetLanding', {
     url: '/alphabetLanding',
     templateUrl: 'templates/alphabetLanding.html',
     controller: 'alphabetLandingCtrl'
   })
+
+.state('animalGlossary', {
+    url: '/animalGlossary',
+    templateUrl: 'templates/animalGlossary.html',
+    controller: 'animalGlossaryCtrl'
+  })
+
+.state('wordsGlossary', {
+    url: '/wordsGlossary',
+    templateUrl: 'templates/wordsGlossary.html',
+    controller: 'wordsGlossaryCtrl'
+  })
+
+
 
 .state('poem', {
     cache:false,

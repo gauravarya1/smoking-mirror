@@ -1,16 +1,12 @@
   
-<ion-view style="" id="alphabets" title="Alphabets">
-    <ion-content class="has-header" padding="true">
+<ion-view class="alphabets-with-bg" style="" id="alphabets" title="Alphabets">
+    <ion-content class="has-header view-content" scroll="true" padding="true">
 
 	   
-<div  ng-repeat="item in alphabets" ng-click="getPlaylist(item)" class="button-bar button-bar-inline">
-  <a class="button alpha-button" ng-style="{'background-color': getRandomColor() }" >{{item}}</a>
+<div  ng-repeat="item in alphabets" ng-click="checkAccess(item)" class="button-bar button-bar-inline">
+  <a class="button alpha-button" ng-style="" >{{item}}</a>
   
-</div>
-
-
-
-           
+</div>           
    
 </ion-content>
 </ion-view>

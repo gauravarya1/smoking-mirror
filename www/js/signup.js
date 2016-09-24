@@ -85,7 +85,9 @@ else if(($scope.user.phone+"a")=="undefineda")       //Error if phone number is 
                         });
                         confirmPopup.then(function(res) {
                             console.log('SIGNUP SUCCESS');
-                          window.location='/#/login';
+                          
+                          $location.path('/login');
+                          $scope.$apply();
                           }) ;
                     }
                   }

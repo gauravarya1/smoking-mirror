@@ -7,9 +7,15 @@
 
 .page1-with-bg{
   .view-content {
-    background-image: url('../img/Back/j2.jpg');
+    background-image: url('../img/Back/j1.jpg');
     background-size: cover;
   }
 }
 
 
+ .button-continue
+ {
+ position: absolute;
+ bottom: 20px;
+ width:100%;
+ }

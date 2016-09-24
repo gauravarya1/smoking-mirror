@@ -1,11 +1,27 @@
 .alpha-button
 {
-	margin: 5px !important;
-	color: #ffffff !important;
-	 font-size: 18px;
-    font-weight: 900;
+	
+  background-image: url('../img/alpha_btn.png');
+  background-color: transparent !important;
+    color: #000205;
+     border-radius: 51px !important;
+    font-family: Georgia;
+    font-size: 39px;
+    margin: 4px;
+    padding: 15px 15px !important;
+    text-decoration: none !important;
+    text-shadow: 1px 1px 3px #000;
+     width: 80px !important;
+     background-repeat: no-repeat;
+     border-style: none !important;
 }
 
+.alphabets-with-bg{
+  .view-content {
+    background-image: url('../img/Back/j2.jpg');
+    background-size: cover;
+  }
+}
 
 .button-bar.button-bar-inline:before, .button-bar.button-bar-inline:after 
 {

@@ -1,4 +1,4 @@
-<ion-view style="" class="login-with-bg" id="login" title="Login">
+<ion-view style="" class="login-with-bg" id="login" title="Alphabetastic">
     <ion-content class="has-header view-content" scroll="false" padding="true">
         <form class="list" ng-submit=submitLogin() id="login-form1" novalidate>
             <ion-list id="login-list1">
@@ -10,6 +10,8 @@
                     <span class="input-label">Password</span>
                     <input  type="password" name="pwd" ng-model="data.pwd" placeholder="Enter Password" required>
                 </label>
+                <div class="forgot"><a class="" style="color:#FFF;self-align:right;text-decoration:none" id="forgot-button" ui-sref="forgot">Forgot Password? Tap Here To Recover</a></div>
+
             </ion-list> 
             <div style="height: 40px;" class="spacer"></div>
             <input  class=" button button-block  button-dark" id="login-button1" type="Submit" value="Login">

@@ -9736,19 +9736,28 @@ a.button {
   background-size: cover; }
 
 .page1-with-bg .view-content {
-  background-image: url("../img/Back/j2.jpg");
+  background-image: url("../img/Back/j1.jpg");
   background-size: cover; }
 
+.button-continue {
+  position: absolute;
+  bottom: 20px;
+  width: 100%; }
+
 .poem-box {
-  margin: 80px;
+  margin-bottom: 20px;
   padding: 20px;
   color: #000;
-  background-image: url("../img/Back/poemframe.gif");
+  background-image: url("../img/Back/poemframe.png");
+  background-repeat: no-repeat;
   text-align: center;
-  background-size: 800px 600px;
   font-size: 25px;
-  font-family: Sans-Serif;
+  font-family: Comic Sans MS;
   font-weight: 900; }
+
+.poem-box pre {
+  margin: 35px 30px 30px 45px;
+  line-height: 90%; }
 
 .animal-box {
   padding: 30px;
@@ -9757,6 +9766,9 @@ a.button {
   text-align: center;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300; }
+
+.animal-box .animal_name {
+  vertical-align: -moz-middle-with-baseline !important; }
 
 .intro-box {
   padding: 180px 2px 36px 134px;
@@ -9770,14 +9782,31 @@ a.button {
   opacity: 0.8; }
 
 .login-with-bg .view-content {
-  background-image: url("../img/Back/j2.jpg");
+  background-image: url("../img/Back/bk1.jpg");
   background-size: cover; }
 
+.forgot {
+  text-align: right;
+  margin-top: 15px; }
+
 .alpha-button {
-  margin: 5px !important;
-  color: #ffffff !important;
-  font-size: 18px;
-  font-weight: 900; }
+  background-image: url("../img/alpha_btn.png");
+  background-color: transparent !important;
+  color: #000205;
+  border-radius: 51px !important;
+  font-family: Georgia;
+  font-size: 39px;
+  margin: 4px;
+  padding: 15px 15px !important;
+  text-decoration: none !important;
+  text-shadow: 1px 1px 3px #000;
+  width: 80px !important;
+  background-repeat: no-repeat;
+  border-style: none !important; }
+
+.alphabets-with-bg .view-content {
+  background-image: url("../img/Back/j2.jpg");
+  background-size: cover; }
 
 .button-bar.button-bar-inline:before, .button-bar.button-bar-inline:after {
   display: inline !important;
@@ -9820,7 +9849,17 @@ a.button {
   height: 100%;
   border-radius: 50%; }
 
-.glossary, .glossary h4 {
+.glossary {
+  margin-top: 50px;
+  color: #FFF;
+  position: unset;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 900;
+  text-align: center; }
+
+.glossary h4 {
   color: #FFF;
   position: unset;
   display: block;
@@ -9835,8 +9874,32 @@ a.button {
   margin-right: auto;
   top: 16px;
   left: 16px;
-  max-width: 215px;
-  max-height: 80px;
-  width: 100%;
+  max-width: 100%;
+  max-height: 63%;
+  width: auto;
   height: 100%;
   border-radius: 50%; }
+
+.btn {
+  background: #FF9900;
+  background-image: -webkit-linear-gradient(top, #FF9900, #fa7a12);
+  background-image: -moz-linear-gradient(top, #FF9900, #fa7a12);
+  background-image: -ms-linear-gradient(top, #FF9900, #fa7a12);
+  background-image: -o-linear-gradient(top, #FF9900, #fa7a12);
+  background-image: linear-gradient(to bottom, #FF9900, #fa7a12);
+  -webkit-border-radius: 13;
+  -moz-border-radius: 13;
+  border-radius: 13px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 18px;
+  padding: 10px 14px;
+  text-decoration: none;
+  line-height: 19px; }
+
+.btn:hover {
+  text-decoration: none; }
+
+.glossary-item {
+  min-height: 72px;
+  padding-left: 2px; }

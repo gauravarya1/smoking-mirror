@@ -5,20 +5,20 @@
  
 
   <div class="toPoem">
-    <img src="img/Armadillo.png">
-    
-    <a class=" button button-dark button-block  button-outlined " id="continue_button" ui-sref="poem">Poem:    Adabadaba The Armadillo</a>
+    <span ui-sref="poem"> </span>
+    <br><br><br>
+    <a class=" button btn" id="poem_button" ui-sref="poem"> {{title}}</a>
     
   </div>
  		  
 <div class="row">
   <div class="col glossary">
-  		
-  		<h4>Animal Glossary</h4>
+  		<img ng-src="{{getURL()}}" ui-sref="animalGlossary">
+  		<a class="button btn" id="animal_button" ui-sref="animalGlossary">Learn About Mammals</a>
   </div>
   <div class="col glossary">
-  		<img src="img/glos.png">
-  		<h4>Difficult Words Glossary</h4>
+      <img src="img/glos.png" ui-sref="wordsGlossary">
+      <a class="button btn" id="animal_button" ui-sref="wordsGlossary">Difficult Words Explained</a>
   </div>
   
 </div>
