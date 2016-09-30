@@ -8,25 +8,27 @@ padding: 20px;
     background-repeat: no-repeat;
   text-align: center;
   
- font-size: 25px;
+ font-size: 90%;
   font-family: Comic Sans MS; 
   font-weight: 900;
+  line-height:140%;
 
 }
 
 
 .poem-box pre
 {
-  margin:35px 30px 30px 45px;
-  line-height: 90%;
+ .animal{color:red;}
+font-family: "Comic Sans MS";
+  margin:35px 30px 0px 50px;
+  line-height: 130%;
+
 }
-
-
 
 
 .animal-box
 {
-	
+  
   padding: 30px;
   color: #000;
   background-color: #fff;
@@ -44,18 +46,93 @@ vertical-align: -moz-middle-with-baseline !important;
 }
 
 
-.intro-box
-{
-	
-  padding: 180px 2px 36px 134px;
-  max-width:350px;
-  color: #000;
-  
-  text-align: center;
- 
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-  font-weight: 900;
 
+@media only screen and(max-width: 362px) {
+  .animal-box
+    {     
+      font-size: 110%;
+
+    }
+
+  .poem-box pre
+    {
+      font-size:120%;
+      line-height:135%;
+
+    }
+    
 }
+
+
+@media only screen and(min-width: 363px) and  (max-width: 475px) {
+  .animal-box
+    {     
+      font-size: 110%;
+
+    }
+
+  .poem-box pre
+    {
+      font-size:140%;
+      line-height:140%;
+
+    }
+    
+}
+
+
+@media only screen and (min-width: 476px) and (max-width: 765px) {
+
+    .animal-box
+    {     
+      font-size: 130%;
+      line-height:160%;
+    }
+
+    .poem-box pre
+    {
+      font-size:170%;
+      line-height:150%;
+    }
+}
+
+@media only screen and (min-width: 766px) and (max-width: 1280px) {
+
+    .animal-box
+    {     
+      font-size: 180%;
+      line-height:190%;
+    }
+
+    .poem-box pre
+    {
+      
+      font-size:200%;
+      line-height:160%;
+    }
+}
+
+@media only screen and (min-width: 1281px) {
+
+    .animal-box
+    {     
+      font-size: 200%;
+      line-height:190%;
+    }
+
+    .poem-box pre
+    {
+      
+      font-size:250%;
+    }
+}
+
+.back_to_alpha
+{
+  
+  text-align:right;
+  font-weight: 600;
+}
+
 
 

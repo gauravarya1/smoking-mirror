@@ -1,13 +1,38 @@
-<ion-view class="" style="" id="categoryLanding" title="Alphabetastic">
+<ion-view class="view-with-bg3" style="" id="categoryLanding" title="Alphabetastic">
     <ion-content class="has-header view-content" padding="true">
+			
+			<ion-slide-box>
+			  <ion-slide ng-repeat="item in poem" style="opacity:.7;">
+			  		<div class="list card" > 
 
-<ion-slide-box>
-  <ion-slide ng-repeat="item in poem" >
-   <div class="poem-box "> <pre>{{item}} </pre></div>
-  </ion-slide>
-</ion-slide-box>
+			          
 
- <a class=" button button-royal  button-block button-outlined " id="continue_button" ui-sref="alphabets">Continue to Alphabets</a>
+			            <div class="item item-body" >
+			              
+			              <div class="mammals-box"> <p><div ng-bind-html="item"></div></p></div>
+			             
+			            </div>
+
+			        </div>
+						   
+			  </ion-slide>
+			</ion-slide-box>
+ 
+ 
+
+			 <ion-slide-box delegate-handle="pictures" does-continue="true" auto-play="true" slide-interval="{{interval}}"
+			        show-pager="false"
+			        pager-click="changeSlide(index)"
+			        on-slide-changed="slideHasChanged(index)">
+			        <ion-slide ng-repeat="img in imgs" class="mammals-slide">
+			            <img  class="mammals-slide" src="{{urlbase}}{{img}}" height="auto" width="200px" >
+			            
+			        </ion-slide>
+			       
+			    </ion-slide-box>
+
+
+			 <a class=" button button-royal  button-block button-outlined " id="continue_button" ui-sref="alphabets">Continue to Alphabets</a>
 
 </ion-content>
 </ion-view>

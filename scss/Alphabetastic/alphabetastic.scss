@@ -5,9 +5,30 @@
   }
 }
 
+.view-with-bg1{
+  .view-content {
+    background-image: url('../img/Back/j1.png');
+    background-size: cover;
+  }
+}
+
+.view-with-bg3{
+  .view-content {
+    background-image: url('../img/Back/j3.jpg');
+    background-size: cover;
+  }
+}
+
+.view-with-bg4{
+  .view-content {
+    background-image: url('../img/Back/j4.jpg');
+    background-size: cover;
+  }
+}
+
 .page1-with-bg{
   .view-content {
-    background-image: url('../img/Back/j1.jpg');
+    
     background-size: cover;
   }
 }

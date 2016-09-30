@@ -1,0 +1,85 @@
+.mammals-box
+	{			
+		margin-bottom:20px;
+		padding: 20px;
+	    color: #000;
+		text-align: center;
+	   	font-size: 100%;
+	  	font-family: Comic Sans MS; 
+	  	font-weight: 900;
+	  	line-height:140%;
+	}
+	.mammals-heading
+		{
+			text-align:center;
+			width:100%;
+		}
+
+.mammals-slide
+{
+	text-align:center;
+	max-height: 150px;
+
+}
+
+
+@media only screen and (max-width: 480px) {
+	.mammals-box
+		{			
+			font-size: 90%;
+
+		}
+
+	.mammals-heading
+		{
+			font-size:120%;
+
+		}
+		
+}
+
+
+@media only screen and (min-width: 481px) and (max-width: 765px) {
+
+		.mammals-box
+		{			
+			font-size: 130%;
+			line-height:160%;
+		}
+
+		.mammals-heading
+		{
+			font-size:180%;
+		}
+}
+
+@media only screen and (min-width: 766px) and (max-width: 1280px) {
+
+		.mammals-box
+		{			
+			font-size: 180%;
+			line-height:190%;
+		}
+
+		.mammals-heading
+		{
+			
+			font-size:220%;
+		}
+}
+
+@media only screen and (min-width: 1281px) {
+
+		.mammals-box
+		{			
+			font-size: 200%;
+			line-height:190%;
+		}
+
+		.mammals-heading
+		{
+			
+			font-size:250%;
+		}
+}
+

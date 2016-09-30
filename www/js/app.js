@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.directives','app.services',])
+angular.module('app', ['ionic', 'ngCordova','app.controllers', 'app.routes', 'app.directives','app.services',])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -24,7 +24,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.directives
 
 
 
-var module=angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.directives','app.services',]);
+var module=angular.module('app', ['ionic','ngCordova', 'app.controllers', 'app.routes', 'app.directives','app.services',]);
 
 
 
@@ -42,7 +42,7 @@ if(localStorage.getItem('token'))  //If token exists, redirect to home
 
   { 
     //alert(localStorage.getItem('token'));
-    $location.path('/categoryLanding');
+    $location.path('/home');
   $scope.$apply();
  }
     $scope.submitLogin = function(){
@@ -74,7 +74,7 @@ if(localStorage.getItem('token'))  //If token exists, redirect to home
             
             localStorage.setItem('username', $scope.data.uname);
 
-             $location.path('/categoryLanding');
+             $location.path('/home');
              $scope.$apply();
                //alert("here");
           }
@@ -144,100 +144,107 @@ $scope.$apply();
 
 
 //------------------Controller for CategoryLanding --------------------------------------------
-module.controller('categoryLandingCtrl', function($scope, $http, $ionicPopup, $location) {
+module.controller('categoryLandingCtrl', function($scope, $http, $ionicPopup,$timeout, $ionicSlideBoxDelegate) {
  
   $scope.poem=[
-        "What are Mammals? They are animals, of course!\n Dogs, cats, elephants, lions, monkeys or a horse. \n Most but not all of them can walk on land, \n Some have paws, some fins and some like us have hands.",
+        "What are Mammals? They are animals, of course!<br> Dogs, cats, elephants, lions, monkeys or a horse. <br> Most but not all of them can walk on land, <br> Some have paws, some fins and some like us have hands.",
 
-"Mammals don’t fly, but give birth to babies so cute, \n But there are birds who don’t fly and are still birds to boot! \n And two mammals don’t give birth, but lay eggs! \n And most mammals, but not the aquatic ones, seem to have legs!",
+"Mammals don’t fly, but give birth to babies so cute, <br> But there are birds who don’t fly and are still birds to boot! <br> And two mammals don’t give birth, but lay eggs! <br> And most mammals, but not the aquatic ones, seem to have legs!",
 
-"Isn’t there anything common to all mammalian creatures? \n Something that makes us say, now that’s a mammalian feature! \n  The big brains, the scientists, have sorted out facts six. \n All mammals have these, and in them lie no exceptions or tricks.",
+"Isn’t there anything common to all mammalian creatures? <br> Something that makes us say, now that’s a mammalian feature! <br>  The big brains, the scientists, have sorted out facts six. <br> All mammals have these, and in them lie no exceptions or tricks.",
 
-"Fact number one, what’s so unique about mammals all? \n Mommy mammals have milk for their babies big and small. \n Then is fact number two that all mammals have body hair, \n Whch could be soft, prickly or the kind to give you a scare!",
+"Fact number one, what’s so unique about mammals all? <br> Mommy mammals have milk for their babies big and small. <br>Then is fact number two that all mammals have body hair, <br> Whch could be soft, prickly or the kind to give you a scare!",
 
-"Fact number three is a strange fact about the mammalian ear, \n All mammals have three middle ear bones to allow them to hear. \n Fact number four is also bone-related and something mammals can’t hide.\n Each mammal’s lower jaw bone has a single bone on either side. ",
+"Fact number three is a strange fact about the mammalian ear, <br> All mammals have three middle ear bones to allow them to hear. <br> Fact number four is also bone-related and something mammals can’t hide.<br> Each mammal’s lower jaw bone has a single bone on either side. ",
 
-"Number five is a fact about the artery that forms the aortic arch, \n In each mammal, the aorta curves to the left when leaving the heart. \n Finally, we come to fact number six, all mammals have a diaphragm, \n It’s what they need to breathe and stay alive without coming to harm!",
+"Number five is a fact about the artery that forms the aortic arch,<br> In each mammal, the aorta curves to the left when leaving the heart.<br> Finally, we come to fact number six, all mammals have a diaphragm, <br> It’s what they need to breathe and stay alive without coming to harm!",
 
-"So here’s a little  about all sorts of mammals for you, \n Arranged alphabetically from A-to-Z – you might discover something new, \n And at the end of each funny mammalian rhyme you’ll find, \n Some of the big words explained so they come easily to mind.",
+"So here’s a little  about all sorts of mammals for you, <br> Arranged alphabetically from A-to-Z – you might discover something new, <br> And at the end of each funny mammalian rhyme you’ll find, <br> Some of the big words explained so they come easily to mind.",
 
-"Here’s hoping that you like Alphabetastic and all we’ve penned, \n And that you’ll read it all over again once you’ve reached the end. \n And in case you think we’ve missed a mammal in the world from, \n Mail us with your thoughts at alphabetastic@smokingmirrormedia.com!"
+"Here’s hoping that you like Alphabetastic and all we’ve penned, <br> And that you’ll read it all over again once you’ve reached the end. <br> And in case you think we’ve missed a mammal in the world from, <br> Mail us with your thoughts at alphabetastic@smokingmirrormedia.com!"
 
          ];
 
-  /*
-  var dataString = 'category=mammals' ;
-    $.ajax({
-        type: "POST",
-        url: "http://app.planeers.com/categorypoem.php",
-        data: dataString,
-        cache: false,
-        success: function(result){
 
-            var a = JSON.parse(result);
-            
-          $scope.poem1=result;          
-        }
-        }); //Ajax call ends
-*/
+$scope.urlbase="http://alphabetastic.com/img/mammals/";
+$scope.imgs=["A/armadillo.png","B/badger.png","C/camels.png",
+               "D/deer.png","E/elephant.png","F/fossa.png",
+                 "G/giraffe.png", "H/horse.png","I/impala.png",
+                 "J/jaguar.png","K/kangaroo.png","L/leopard.png","M/monkey.png","N/narwhal.png",
+                 "O/otter.png","P/pika.png","Q/quoll.png","R/rabbit.png",
+                 "S/seal.png","T/tiger.png","U/uakari.png","V/vampire_bat.png","W/walrus.png",
+                 "X/wooly_mammoth.png","Y/yak.png","Z/zebra.png"];
 
+ $scope.interval = 3500;
+
+$scope.slideHasChanged = function(index) {
+    $scope.slideIndex = index;
+    if ( ($ionicSlideBoxDelegate.count() -1 ) == index ) {
+        $timeout(function(){
+            $ionicSlideBoxDelegate.$getByHandle('pictures').slide(0);
+        },$scope.interval);
+    }
+};
   });
 //------------------Controller for CategoryLanding Ends--------------------------------------------
 
 //-------------------------------------------Alphabets Page----------------------
-module.controller('alphabetsCtrl', function($scope, $location,$ionicPopup) {
+module.controller('alphabetsCtrl', function($scope, $location,$ionicPopup,$timeout) {
   
   $scope.alphabets = [
         "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O",
-        "P","Q","R","S","T","U","V","W","Y","Z"
+        "P","Q","R","S","T","U","V","W","X","Y","Z"
     ];
 
 
 
     $scope.checkAccess = function(id) {
-    localStorage.setItem('alphabet', id);       
-   
-    if(id!='A' && id!='B' && id!='C')
-    {
-    
-        var user=  localStorage.getItem('username');
-        var dataString = 'username='+user ;
-        $.ajax({
-            type: "POST",
-            url: "http://app.planeers.com/access.php",
-            data: dataString,
-            cache: false,
-            success: function(result){
+    localStorage.setItem('alphabet', id); 
 
-              if(result=="fail")
-              {
-                   var confirmPopup = $ionicPopup.alert
-                            ({
-                                title: "Please Upgrade",
-                                template: 'Please complete payment of Rs. 99 to access premium content.'
-                            });
-                    $location.path('/payments'); 
-                    $scope.$apply();
-
-              }
-              else 
-              {
-                  $location.path('/alphabetLanding');
-                  localStorage.setItem('alphabet', id); 
-                  $scope.$apply();
-              }
-
-            }
-            }); //Ajax call ends
-  
-        
-      }  //if ends
-      else 
-              {
+     
+      
+         if(id=='A' || id=='B' || id=='C')
+             {
                   $location.path('/alphabetLanding');
                   localStorage.setItem('alphabet', id); 
                   $scope.$apply();
               } 
+
+            else
+              {
+    
+                  var user=  localStorage.getItem('username');
+                  var dataString = 'username='+user ;
+                  $.ajax({
+                      type: "POST",
+                      url: "http://app.planeers.com/access.php",
+                      data: dataString,
+                      cache: false,
+                      success: function(result){
+                        if(result=='success')
+                          {
+                              $location.path('/alphabetLanding');
+                              localStorage.setItem('alphabet', id); 
+                              $scope.$apply();
+                          }
+                      else
+                        {
+                             var confirmPopup = $ionicPopup.alert
+                                  ({
+                                      title: "Please Upgrade",
+                                      template: 'Please complete payment of Rs. 99 to access premium content.'
+                                  });
+                          $location.path('/payments'); 
+                          $scope.$apply();
+
+                          }
+                          
+
+                  }
+                  }); //Ajax call ends
+  
+        
+                }  //if ends
 
     }
 });
@@ -247,15 +254,36 @@ module.controller('alphabetsCtrl', function($scope, $location,$ionicPopup) {
 
 //------------------Controller for Alphabet Landing Page ----------------------------------------
 
-module.controller('alphabetLandingCtrl', function($scope, $http,  $ionicPopup, $location, $ionicSlideBoxDelegate) {
+module.controller('alphabetLandingCtrl', function($scope,$state,$http,  $ionicPopup, $location, $ionicSlideBoxDelegate) {
 
-var alpha=localStorage.getItem('alphabet');
+
+$state.reload();
+$scope.title="";
+var alpha="";
+alpha=localStorage.getItem('alphabet');
 var urlbase="http://alphabetastic.com/img/mammals/";
-var imgs={"A":"A/armadillo.png",
-              "B":"B/badger.png",
-              "C":"C/camels.png"
+var imgs={"A":"/armadillo.png",              "B":"/badger.png",              "C":"/camels.png",
+              "D":"/deer.png",              "E":"/elephant.png",              "F":"/fossa.png",
+              "G":"/giraffe.png",              "H":"/horse.png",              "I":"/indri.png",
+              "J":"/jackal",              "K":"/kangaroo",              "L":"/lion",
+              "M":"/mandrill",              "N":"/narwhal",              "O":"/otter",
+              "P":"/possum",              "Q":"/quoll",              "R":"/rabbit",
+              "S":"/seal",              "T":"/tiger",              "U":"/uakari",
+              "V":"/vampire_bat",              "W":"/walrus",              "X":"/wooly_mammoth",
+              "Y":"/yak",              "Z":"/zebra"
+
             };
-var dataString = 'cate=mammals&alpha='+ alpha ;
+
+
+
+  
+  
+  
+     $scope.getURL = function() 
+     {
+      var dataString = 'cate=mammals&alpha='+localStorage.getItem('alphabet');
+
+
           $.ajax({
               type: "POST",
               url: "http://app.planeers.com/poem_title.php",
@@ -263,18 +291,13 @@ var dataString = 'cate=mammals&alpha='+ alpha ;
               cache: false,
               success: function(result){
 
-                           
-                $scope.title= result;     
-                 $scope.$apply();     
+                  result=result.split("�").join("'");        
+                $scope.title=result;     
+                  
               }
               });
-  
-
-  
-     $scope.getURL = function() 
-     {
-              
-          return (urlbase+imgs[alpha]);
+              alpha=localStorage.getItem('alphabet');
+          return (urlbase+alpha+imgs[alpha]);
      }
 
 
@@ -318,6 +341,7 @@ module.controller('poemCtrl', function($scope, $http, $ionicPopup, $location, $i
                   es[0]=es[0].replace('"','');
                   
                   es[3]=es[3].replace('"','');
+
                  // var es= ["Adabadaba was an armadillo rather blue and sad,\n He wanted to be strong and tall ever so bad.\n But all he had on was this funny body armor, \n The aye-aye and anoa found him to be no charmer. ","So he went to the aardvark who tried to pull it off in vain,\n The antelope and the addax thought it to be a bane.\n What to do? How do I become not strange but mighty?\n He tried asking the anteater, but she was just too flighty. ","What was the point of his ugly shell, he asked the agouti,\n Said the aardwolf, it's not great looking, I agree.\n It's good protection, from dangers big and small,\n For when you feel threatened you curl up into a ball. ","Said the alpaca to Adabadaba, this is indeed a great trick,\n Your armor is awesome, it protects you from cuts and nicks.\n No longer did Adabadaba want to be tall and towering,\n His mighty armadillo armor was very, very empowering. "];
                   $scope.poem=es;
                   $scope.$apply();
@@ -339,24 +363,7 @@ module.controller('poemCtrl', function($scope, $http, $ionicPopup, $location, $i
                         
             }
             }); //Ajax call for poem ends
-      
-//----------------------- AJAX CAll for title-------
 
-var alpha=  localStorage.getItem('alphabet');
-
-    var dataString = 'cate=mammals&alpha='+ alpha ;
-    $.ajax({
-        type: "POST",
-        url: "http://app.planeers.com/poem_title.php",
-        data: dataString,
-        cache: false,
-        success: function(result){
-
-                     
-          $scope.poem_title=result;          
-        }
-        }); //Ajax call for Poem Title ends
-//----------------------------------
 
 // AJAX call for animals in slider at bottom
 
@@ -386,9 +393,17 @@ var alpha=  localStorage.getItem('alphabet');
         }); //Ajax call ends
 
   
-   $scope.updateSlider = function () {
-            $ionicSlideBoxDelegate.update(); //or just return the function
-        }  
+           $scope.updateSlider = function () 
+           {
+                    $ionicSlideBoxDelegate.update(); //or just return the function
+          }  
+
+        $scope.toalphabets = function () 
+        {
+                localStorage.removeItem("alphabet");
+                $location.path('/alphabets'); 
+                  
+        }
 });
 //------------------Controller for Poem Page  Ends--------------------------------------------
 
@@ -469,5 +484,48 @@ $scope.animals=[];
         }  
     
   });
+
+//  ------------------------controller for animalGlossary ends----------------
+
+
+
+//------------------Controller for Payment Page ----------------------------------------
+module.controller('paymentsCtrl', function($scope,$cordovaInAppBrowser, $http,$rootScope, $ionicPopup, $location) {
+  
+
+
+   var options = {
+      location: 'yes',
+      clearcache: 'yes',
+      toolbar: 'no'
+   };
+ var user= localStorage.getItem('username');
+
+        $scope.toPayment =function()
+        {
+        
+
+                   $cordovaInAppBrowser.open('http://alphabetastic.com/merchantpayment/index.php?user='+user, '_blank', options)
+               
+                  .then(function(event) {
+                     // success
+                     $location.path('/alphabets'); 
+                         
+                  })
+                
+                  .catch(function(event) {
+                     // error
+                  });
+
+                    $location.path('/alphabets'); 
+                  $scope.$apply();
+    
+        }//toPayment function ends
+    
+    
+
+        
+      
+});
 
 //  ------------------------controller for animalGlossary ends----------------

@@ -5,14 +5,14 @@ in ionic's _variables.scss file.
 
 For example, you might change some of the default colors:
 
-$light:                           #fff !default;
-$stable:                          #f8f8f8 !default;
-$positive:                        #387ef5 !default;
-$calm:                            #11c1f3 !default;
+$light:                           #fff !default; 
+$stable:                          #f8f8f7 !default; 
+$positive:                        #387ef5 !default; 
+$calm:                            #11c1f3 !default;     
 $balanced:                        #33cd5f !default;
-$energized:                       #ffc900 !default;
-$assertive:                       #ef473a !default;
-$royal:                           #886aea !default;
+$energized:                       #ffc900 !default;  
+$assertive:                       #ef473a !default;  
+$royal:                           #886aea !default;      
 $dark:                            #444 !default;
 */
 /*!
@@ -9735,8 +9735,19 @@ a.button {
   background-image: url("../img/Back/j2.jpg");
   background-size: cover; }
 
+.view-with-bg1 .view-content {
+  background-image: url("../img/Back/j1.png");
+  background-size: cover; }
+
+.view-with-bg3 .view-content {
+  background-image: url("../img/Back/j3.jpg");
+  background-size: cover; }
+
+.view-with-bg4 .view-content {
+  background-image: url("../img/Back/j4.jpg");
+  background-size: cover; }
+
 .page1-with-bg .view-content {
-  background-image: url("../img/Back/j1.jpg");
   background-size: cover; }
 
 .button-continue {
@@ -9751,13 +9762,17 @@ a.button {
   background-image: url("../img/Back/poemframe.png");
   background-repeat: no-repeat;
   text-align: center;
-  font-size: 25px;
+  font-size: 90%;
   font-family: Comic Sans MS;
-  font-weight: 900; }
+  font-weight: 900;
+  line-height: 140%; }
 
 .poem-box pre {
-  margin: 35px 30px 30px 45px;
-  line-height: 90%; }
+  font-family: "Comic Sans MS";
+  margin: 35px 30px 0px 50px;
+  line-height: 130%; }
+  .poem-box pre .animal {
+    color: red; }
 
 .animal-box {
   padding: 30px;
@@ -9770,13 +9785,46 @@ a.button {
 .animal-box .animal_name {
   vertical-align: -moz-middle-with-baseline !important; }
 
-.intro-box {
-  padding: 180px 2px 36px 134px;
-  max-width: 350px;
-  color: #000;
-  text-align: center;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-weight: 900; }
+@media only screen and (max-width: 362px) {
+  .animal-box {
+    font-size: 110%; }
+  .poem-box pre {
+    font-size: 120%;
+    line-height: 135%; } }
+
+@media only screen and (min-width: 363px) and (max-width: 475px) {
+  .animal-box {
+    font-size: 110%; }
+  .poem-box pre {
+    font-size: 140%;
+    line-height: 140%; } }
+
+@media only screen and (min-width: 476px) and (max-width: 765px) {
+  .animal-box {
+    font-size: 130%;
+    line-height: 160%; }
+  .poem-box pre {
+    font-size: 170%;
+    line-height: 150%; } }
+
+@media only screen and (min-width: 766px) and (max-width: 1280px) {
+  .animal-box {
+    font-size: 180%;
+    line-height: 190%; }
+  .poem-box pre {
+    font-size: 200%;
+    line-height: 160%; } }
+
+@media only screen and (min-width: 1281px) {
+  .animal-box {
+    font-size: 200%;
+    line-height: 190%; }
+  .poem-box pre {
+    font-size: 250%; } }
+
+.back_to_alpha {
+  text-align: right;
+  font-weight: 600; }
 
 .trans-input {
   opacity: 0.8; }
@@ -9788,6 +9836,15 @@ a.button {
 .forgot {
   text-align: right;
   margin-top: 15px; }
+
+.alphabets-with-bg .view-content {
+  background-image: url("../img/Back/j2.jpg");
+  background-size: cover; }
+
+.button-bar.button-bar-inline:before, .button-bar.button-bar-inline:after {
+  display: inline !important;
+  content: "";
+  line-height: 0px; }
 
 .alpha-button {
   background-image: url("../img/alpha_btn.png");
@@ -9804,14 +9861,43 @@ a.button {
   background-repeat: no-repeat;
   border-style: none !important; }
 
-.alphabets-with-bg .view-content {
-  background-image: url("../img/Back/j2.jpg");
-  background-size: cover; }
+@media only screen and (max-width: 438px) {
+  .alpha-button {
+    background-image: url("../img/alpha_btn_sml.png");
+    margin: 2px;
+    font-size: 175%;
+    padding: 11px 13px 15px 0 !important; } }
 
-.button-bar.button-bar-inline:before, .button-bar.button-bar-inline:after {
-  display: inline !important;
-  content: "";
-  line-height: 0px; }
+@media only screen and (min-width: 439px) and (max-width: 495px) {
+  .alpha-button {
+    background-image: url("../img/alpha_btn.png");
+    margin: 7px;
+    font-size: 240%;
+    padding: 15px 13px 24px !important; } }
+
+@media only screen and (min-width: 496px) and (max-width: 727px) {
+  .alpha-button {
+    background-image: url("../img/alpha_btn_lrg.png");
+    margin: 7px;
+    font-size: 290%;
+    padding: 24px 13px 24px 11px !important;
+    box-sizing: content-box; } }
+
+@media only screen and (min-width: 728px) and (max-width: 787px) {
+  .alpha-button {
+    background-image: url("../img/alpha_btn_xl.png");
+    margin: 15px;
+    font-size: 350%;
+    padding: 32px 13px 40px 17px !important;
+    box-sizing: content-box; } }
+
+@media only screen and (min-width: 788px) {
+  .alpha-button {
+    background-image: url("../img/alpha_btn_xxl.png");
+    margin: 22px;
+    font-size: 399%;
+    padding: 38px 33px 41px 27px !important;
+    box-sizing: content-box; } }
 
 .signuperror {
   color: #04346b;
@@ -9868,16 +9954,15 @@ a.button {
   font-weight: 900; }
 
 .glossary > img:first-child {
+  margin-top: 30px;
   position: unset;
   display: block;
   margin-left: auto;
   margin-right: auto;
   top: 16px;
   left: 16px;
-  max-width: 100%;
-  max-height: 63%;
   width: auto;
-  height: 100%;
+  height: 130px;
   border-radius: 50%; }
 
 .btn {
@@ -9900,6 +9985,118 @@ a.button {
 .btn:hover {
   text-decoration: none; }
 
+@media only screen and (min-width: 660px) {
+  .glossary > img:first-child {
+    height: 220px; } }
+
 .glossary-item {
   min-height: 72px;
   padding-left: 2px; }
+
+.logo {
+  width: 100%;
+  height: auto; }
+
+.introduction {
+  margin-bottom: 20px;
+  padding: 20px;
+  color: #000;
+  text-align: center;
+  font-family: Comic Sans MS;
+  font-weight: 900;
+  line-height: 130%; }
+
+.intro-text {
+  line-height: 130%;
+  text-align: center; }
+
+@media only screen and (max-width: 349px) {
+  .introduction {
+    font-size: 70%; }
+  .intro-text {
+    font-size: 60%; } }
+
+@media only screen and (min-width: 350px) and (max-width: 480px) {
+  .introduction {
+    font-size: 90%; }
+  .intro-text {
+    font-size: 80%; } }
+
+@media only screen and (min-width: 481px) and (max-width: 765px) {
+  .introduction {
+    font-size: 130%;
+    line-height: 140%; }
+  .intro-text {
+    font-size: 140%; } }
+
+@media only screen and (min-width: 766px) and (max-width: 1280px) {
+  .introduction {
+    font-size: 190%;
+    line-height: 180%; }
+  .intro-text {
+    font-size: 170%; } }
+
+@media only screen and (min-width: 1281px) {
+  .introduction {
+    font-size: 220%;
+    line-height: 190%; }
+  .intro-text {
+    font-size: 190%; } }
+
+.mammals-box {
+  margin-bottom: 20px;
+  padding: 20px;
+  color: #000;
+  text-align: center;
+  font-size: 100%;
+  font-family: Comic Sans MS;
+  font-weight: 900;
+  line-height: 140%; }
+
+.mammals-heading {
+  text-align: center;
+  width: 100%; }
+
+.mammals-slide {
+  text-align: center;
+  max-height: 150px; }
+
+@media only screen and (max-width: 480px) {
+  .mammals-box {
+    font-size: 90%; }
+  .mammals-heading {
+    font-size: 120%; } }
+
+@media only screen and (min-width: 481px) and (max-width: 765px) {
+  .mammals-box {
+    font-size: 130%;
+    line-height: 160%; }
+  .mammals-heading {
+    font-size: 180%; } }
+
+@media only screen and (min-width: 766px) and (max-width: 1280px) {
+  .mammals-box {
+    font-size: 180%;
+    line-height: 190%; }
+  .mammals-heading {
+    font-size: 220%; } }
+
+@media only screen and (min-width: 1281px) {
+  .mammals-box {
+    font-size: 200%;
+    line-height: 190%; }
+  .mammals-heading {
+    font-size: 250%; } }
+
+#what-are-mammals-button {
+  margin-top: 100px;
+  vertical-align: middle;
+  font-size: 30px;
+  font-weight: 900; }
+
+.payment-or-back {
+  color: #000;
+  font-weight: 900;
+  text-align: center;
+  font-size: 150%;
+  margin-bottom: 18px; }
