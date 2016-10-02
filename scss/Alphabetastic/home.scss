@@ -1,0 +1,48 @@
+#what-are-mammals-button
+{
+	border-radius:50px;
+	margin-top:100px;
+	vertical-align:middle;
+	font-size:30px;
+	font-weight: 900;
+}
+
+.tap-here
+{
+	font-size:10px;
+	line-height:20%;
+}
+
+.push-button{
+	position:relative;
+	
+	color:#FFF;
+	display:block;
+	text-decoration:none;
+	margin:0 auto;
+	border-radius:5px;
+	border:solid 1px #0A0372;
+	background: rgb(110,193,204); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(110,193,204,1) 28%, rgba(5,100,183,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgba(110,193,204,1) 28%,rgba(5,100,183,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgba(110,193,204,1) 28%,rgba(5,100,183,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6ec1cc', endColorstr='#0564b7',GradientType=0 ); /* IE6-9 */
+	text-align:center;
+	padding:20px 30px;
+	
+	-webkit-transition: all 0.1s; 
+	-moz-transition: all 0.1s;
+	transition: all 0.1s;
+	
+	-webkit-box-shadow: 0px 9px 0px #044402;
+        -moz-box-shadow: 0px 9px 0px #044402;
+        box-shadow: 0px 9px 0px #0a0332;
+}
+
+.push-button:active{
+    -webkit-box-shadow: 0px 2px 0px #84261a;
+    -moz-box-shadow: 0px 2px 0px #84261a;
+    box-shadow: 0px 2px 0px #84261a;
+    position:relative;
+    top:7px;
+}

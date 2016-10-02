@@ -1,0 +1,27 @@
+  
+<ion-view style="" id="poem" title="Alphabetastic">
+ <ion-nav-buttons side="primary">
+      <button class="button  ion-ios-undo-outline" ng-click="toalphabets()">
+        Alphabets
+      </button>
+    </ion-nav-buttons>
+    <ion-content scroll="true" class="has-header" padding="true">
+  
+
+ <ion-slide-box> 
+ 
+  <ion-slide ng-repeat="item in poem" ng-init=updateSlider() >
+   <div class="poem-box "> <pre ng-bind-html="item">  </pre></div>
+  </ion-slide>
+</ion-slide-box> 
+ 
+<ion-slide-box>
+  <ion-slide ng-repeat="animal in animals" ng-init=updateSlider()>
+   
+   <div class="animal-box"> <img src="{{animal.url}}" ui-sref="animalGlossary" style="max-height:130px; max-width:150px;"> <span class="animal_name"><h3>{{animal.name}}</h3> </span></div>
+  </ion-slide>
+</ion-slide-box>
+
+	
+</ion-content>
+</ion-view>

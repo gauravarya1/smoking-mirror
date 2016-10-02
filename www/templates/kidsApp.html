@@ -1,14 +1,27 @@
-<ion-view style="" id="page1" title="Kids App">
-    <ion-content class="has-header" padding="true">
-        <div style="">
-            <p>
-                Welcome to the amazing kids application! Tap continue to get on with it!
-                <br>
-                <br>
-                <br>
+<ion-view class="page1-with-bg" style="" id="kidsApp" title="Alphabetastic">
+  sss
+    <ion-content scroll="true" class="has-header view-content has-footer" padding="true">
+      
+        <div class="intro-box">
+        	<img class="logo" src="img/logo.png"> 
+            <p class="introduction">
+               Hi there, we’re excited, happy and pleased, 
+                <br>To join you on this journey of A to Zees.
+                <br>We will make you read and learn in a way that’s fun,
+                <br>As you learn about everything alphabetic under the sun.
+                <br>Think of us as your new encyclopedic best friend forever,
+              <br>  As we help you become witty, retentive and clever!
             </p>
-        </div>
-        <div style="width: 283px; height: 270px;" class="spacer"></div>
-        <a class=" button button-positive  button-block icon ion-android-checkbox " id="kidsApp-button4" ui-sref="login">Continue</a>
+
+           <p class="intro-text"> Welcome to Alphabetastic, a mobile app that’s home to everything alphabetic and fantastic! We begin our journey with mammals and will soon be adding footprints of everything that we can classify in an A to Z format such as birds, insects, colors, space, sports and more…<br>
+Visit us at <span ng-click="toWebsite()" class="outside-web-link">www.alphabetastic.com</span> <br>
+</p>
+
+        </div> 
+        
+        Copyright © Smoking Mirror Media Private Limited, 2016<br><span ui-sref="tnc" style="color:blue;">Terms & Conditions</span>
+
     </ion-content>
+    <a class=" button button-positive  button-block icon button-continue" id="kidsApp-button4" ui-sref="login">Continue</a>
+    
 </ion-view>

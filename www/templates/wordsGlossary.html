@@ -1,0 +1,20 @@
+
+<ion-view class="view-with-bg4" style="" id="wordsGlossary" title="Difficult Words Glossary">
+    <ion-nav-buttons side="right">
+      <button class="button  ion-ios-undo-outline" ng-click="toalphabets()">
+        Alphabets
+      </button>
+    </ion-nav-buttons>
+    <ion-content class="has-header view-content" padding="true">
+
+		<div class="list">
+
+		    <a class="item glossary-item" ng-repeat="word in words" >
+		          <h2><strong>{{word.word}}<strong></h2>
+		      <pre>{{word.meaning}}</pre>
+		    </a>
+
+		</div>
+
+	</ion-content>
+</ion-view>

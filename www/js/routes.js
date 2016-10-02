@@ -16,29 +16,89 @@ angular.module('app.routes', [])
     controller: 'kidsAppCtrl'
   })
 
+
+      .state('tnc', {
+    url: '/tnc',
+    templateUrl: 'templates/tnc.html',
+    controller: 'tncCtrl'
+  })
+
+
+
   .state('login', {
+
     url: '/login',
     templateUrl: 'templates/login.html',
     controller: 'loginCtrl'
   })
 
-  .state('poem', {
-    url: '/poem',
-    templateUrl: 'templates/poem.html',
-    controller: 'poemCtrl'
+.state('forgot', {
+
+    url: '/forgot',
+    templateUrl: 'templates/forgot.html',
+    controller: 'forgotCtrl'
   })
+
 
   .state('signup', {
     url: '/signup',
     templateUrl: 'templates/signup.html',
-    controller: 'signupCtrl'
+    controller: 'signupCtrl' 
   })
 
-  .state('home', {
+   .state('categoryLanding', {
+    url: '/categoryLanding',
+    templateUrl: 'templates/categoryLanding.html',
+    controller: 'categoryLandingCtrl'
+  })
+
+    .state('home', {
     url: '/home',
     templateUrl: 'templates/home.html',
     controller: 'homeCtrl'
   })
+
+  .state('alphabets', {
+    url: '/alphabets',
+    templateUrl: 'templates/alphabets.html',
+    controller: 'alphabetsCtrl'
+  })
+
+  .state('payments', {
+    url: '/payments',
+    templateUrl: 'templates/payments.html',
+    controller: 'paymentsCtrl'
+  })
+
+.state('alphabetLanding', {
+    url: '/alphabetLanding',
+    templateUrl: 'templates/alphabetLanding.html',
+    controller: 'alphabetLandingCtrl'
+  })
+
+.state('animalGlossary', {
+    url: '/animalGlossary',
+    templateUrl: 'templates/animalGlossary.html',
+    controller: 'animalGlossaryCtrl'
+  })
+
+.state('wordsGlossary', {
+    url: '/wordsGlossary',
+    templateUrl: 'templates/wordsGlossary.html',
+    controller: 'wordsGlossaryCtrl'
+  })
+
+
+
+.state('poem', {
+    cache:false,
+    url: '/poem',
+    templateUrl: 'templates/poem.html',
+    controller: 'poemCtrl'
+  })
+ 
+
+ 
 
 $urlRouterProvider.otherwise('/Index')
 

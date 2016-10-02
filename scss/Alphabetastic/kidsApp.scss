@@ -1,0 +1,103 @@
+
+.outside-web-link
+{
+	color:blue;	
+}
+.logo
+	{
+		width:100%;
+		height:auto;
+	}
+.introduction
+	{			
+		margin-bottom:20px;
+		padding: 0 20px;
+	    color: #000;
+		text-align: center;
+	   
+	  	font-family: Comic Sans MS; 
+	  	font-weight: 900;
+	  	line-height:130%;
+	}
+.intro-text
+	{
+		line-height:130%;	
+		text-align:jsutify;
+	}
+
+@media only screen and (max-width: 349px) {
+	.introduction
+		{			
+			font-size: 70%;
+
+		}
+
+	.intro-text
+		{
+			font-size:60%;
+
+		}
+		
+}
+
+
+@media only screen and (min-width: 350px)and (max-width: 480px) {
+	.introduction
+		{			
+			font-size: 90%;
+
+		}
+
+	.intro-text
+		{
+			font-size:80%;
+
+		}
+		
+}
+
+
+@media only screen and (min-width: 481px) and (max-width: 765px) {
+
+		.introduction
+		{			
+			font-size: 130%;
+			line-height:140%;
+		}
+
+		.intro-text
+		{
+			font-size:140%;
+		}
+}
+
+@media only screen and (min-width: 766px) and (max-width: 1280px) {
+
+		.introduction
+		{			
+			font-size: 190%;
+			line-height:180%;
+		}
+
+		.intro-text
+		{
+			
+			font-size:170%;
+		}
+}
+
+@media only screen and (min-width: 1281px) {
+
+		.introduction
+		{			
+			font-size: 220%;
+			line-height:190%;
+		}
+
+		.intro-text
+		{
+			
+			font-size:190%;
+		}
+}
+
