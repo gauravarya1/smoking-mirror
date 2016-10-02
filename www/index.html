@@ -5,6 +5,7 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 <meta content="utf-8" http-equiv="encoding">
+
     <title></title>
 
     
@@ -65,8 +66,22 @@
     <div style="">
         <ion-nav-bar class="bar-stable" align-title="center">
             <ion-nav-back-button class="button-icon icon ion-ios-arrow-back">Back</ion-nav-back-button>
+            
         </ion-nav-bar>
-        <ion-nav-view></ion-nav-view>
+        <ion-nav-view>
+          <ion-view>            
+                <ion-nav-buttons side="secondary">
+                <button class="button ion-android-volume-off" ng-click="doSomething()">
+                  I'm</button>
+              </ion-nav-buttons>
+          
+        <ion-content ng-controller="SoundCtrl">
+           
+           
+        </ion-content>
+        </ion-view>
+        </ion-nav-view>
+        
     </div>
 </div>
   </body>

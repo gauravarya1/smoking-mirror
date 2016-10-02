@@ -9837,6 +9837,9 @@ a.button {
   text-align: right;
   margin-top: 15px; }
 
+.alphabets-wrapper {
+  text-align: center; }
+
 .alphabets-with-bg .view-content {
   background-image: url("../img/Back/j2.jpg");
   background-size: cover; }
@@ -9993,13 +9996,16 @@ a.button {
   min-height: 72px;
   padding-left: 2px; }
 
+.outside-web-link {
+  color: blue; }
+
 .logo {
   width: 100%;
   height: auto; }
 
 .introduction {
   margin-bottom: 20px;
-  padding: 20px;
+  padding: 0 20px;
   color: #000;
   text-align: center;
   font-family: Comic Sans MS;
@@ -10008,7 +10014,7 @@ a.button {
 
 .intro-text {
   line-height: 130%;
-  text-align: center; }
+  text-align: jsutify; }
 
 @media only screen and (max-width: 349px) {
   .introduction {
@@ -10044,14 +10050,14 @@ a.button {
     font-size: 190%; } }
 
 .mammals-box {
-  margin-bottom: 20px;
-  padding: 20px;
+  margin-bottom: 10px;
+  padding: 0 20px 0 20px;
   color: #000;
   text-align: center;
-  font-size: 100%;
+  font-size: 80%;
   font-family: Comic Sans MS;
-  font-weight: 900;
-  line-height: 140%; }
+  font-weight: 600;
+  line-height: 135%; }
 
 .mammals-heading {
   text-align: center;
@@ -10063,7 +10069,7 @@ a.button {
 
 @media only screen and (max-width: 480px) {
   .mammals-box {
-    font-size: 90%; }
+    font-size: 80%; }
   .mammals-heading {
     font-size: 120%; } }
 
@@ -10089,10 +10095,49 @@ a.button {
     font-size: 250%; } }
 
 #what-are-mammals-button {
+  border-radius: 50px;
   margin-top: 100px;
   vertical-align: middle;
   font-size: 30px;
   font-weight: 900; }
+
+.tap-here {
+  font-size: 10px;
+  line-height: 20%; }
+
+.push-button {
+  position: relative;
+  color: #FFF;
+  display: block;
+  text-decoration: none;
+  margin: 0 auto;
+  border-radius: 5px;
+  border: solid 1px #0A0372;
+  background: #6ec1cc;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #6ec1cc 28%, #0564b7 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #6ec1cc 28%, #0564b7 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #6ec1cc 28%, #0564b7 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6ec1cc', endColorstr='#0564b7',GradientType=0 );
+  /* IE6-9 */
+  text-align: center;
+  padding: 20px 30px;
+  -webkit-transition: all 0.1s;
+  -moz-transition: all 0.1s;
+  transition: all 0.1s;
+  -webkit-box-shadow: 0px 9px 0px #044402;
+  -moz-box-shadow: 0px 9px 0px #044402;
+  box-shadow: 0px 9px 0px #0a0332; }
+
+.push-button:active {
+  -webkit-box-shadow: 0px 2px 0px #84261a;
+  -moz-box-shadow: 0px 2px 0px #84261a;
+  box-shadow: 0px 2px 0px #84261a;
+  position: relative;
+  top: 7px; }
 
 .payment-or-back {
   color: #000;

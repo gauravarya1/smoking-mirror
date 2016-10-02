@@ -63,7 +63,7 @@ else if(($scope.user.phone+"a")=="undefineda")       //Error if phone number is 
               $.ajax
               ({
                     type: "POST",
-                    url: "http://app.planeers.com/register.php/",
+                    url: "http://alphabetastic.com/app/register.php/",
                     data: dataString,
                     cache: false,
                  success: function(result)

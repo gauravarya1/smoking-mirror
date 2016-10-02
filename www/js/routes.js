@@ -16,6 +16,15 @@ angular.module('app.routes', [])
     controller: 'kidsAppCtrl'
   })
 
+
+      .state('tnc', {
+    url: '/tnc',
+    templateUrl: 'templates/tnc.html',
+    controller: 'tncCtrl'
+  })
+
+
+
   .state('login', {
 
     url: '/login',

@@ -26,10 +26,96 @@ angular.module('app', ['ionic', 'ngCordova','app.controllers', 'app.routes', 'ap
 
 var module=angular.module('app', ['ionic','ngCordova', 'app.controllers', 'app.routes', 'app.directives','app.services',]);
 
+//------------------Controller for sound -------------------------------------------
+
+module.controller('SoundCtrl', function($scope,$cordovaInAppBrowser, $http,$rootScope, $ionicPopup, $location) {
+  
+
+ $scope.play =function()
+    {     
+
+       
+
+    }
 
 
 
+   
+      
+});
+//------------------Controller for sound ends ------------------------------
 
+
+//------------------Controller for Introduction Page ----------------------------------------
+module.controller('kidsAppCtrl', function($scope,$cordovaInAppBrowser, $http,$rootScope, $ionicPopup, $location) {
+  
+
+
+   var options = {
+      location: 'yes',
+      clearcache: 'yes',
+      toolbar: 'no'
+   };
+ var user= localStorage.getItem('username');
+
+        $scope.toWebsite =function()
+        {
+        
+
+                   $cordovaInAppBrowser.open('http://www.alphabetastic.com', '_blank', options)
+               
+                  .then(function(event) {
+                     // success
+                     
+                         
+                  })
+                
+                  .catch(function(event) {
+                     // error
+                  });
+
+                 
+    
+        }//toPayment function ends
+    
+    
+
+        
+      
+});
+
+//  ------------------------controller for Introduction ends----------------
+
+
+
+//------------------Controller for T&C Page ----------------------------------------
+module.controller('tncCtrl', function($scope,$cordovaInAppBrowser, $http,$rootScope, $ionicPopup, $location) {
+  
+
+ $scope.toEmail =function()
+    {     
+
+        cordova.plugins.email.isAvailable(
+            function (isAvailable) {
+                alert('Service is not available') ;
+              });
+
+
+       cordova.plugins.email.open({
+                    to:      'info@alphabetastic.com',
+                    subject: 'About Alphabetastic Mammals'
+                  
+                });
+
+    }
+
+
+
+   
+      
+});
+
+//  ------------------------controller for T&C ends----------------
 
 
 //------------------Controller for Login --------------------------------------------
@@ -58,7 +144,7 @@ if(localStorage.getItem('token'))  //If token exists, redirect to home
         var dataString = 'username='+ $scope.data.uname + '&password='+ $scope.data.pwd;
       $.ajax({
         type: "POST",
-        url: "http://app.planeers.com/login.php",
+        url: "http://alphabetastic.com/app/login.php",
         data: dataString,
         cache: false,
         success: function(result){
@@ -118,27 +204,46 @@ $scope.$apply();
 //------------------Controller for Categories Home --------------------------------------------
 module.controller('forgotCtrl', function($scope, $http, $ionicPopup, $location) {
   
-$scope.setCategory = function(category){
-        localStorage.setItem('category', category);
+$scope.data=[];
+
+$scope.recover = function(category)
+    {
+     
         
-        var dataString = 'email=mammals' ;
-    $.ajax({
-        type: "POST",
-        url: "http://app.planeers.com/categorypoem.php",
-        data: dataString,
-        cache: false,
-        success: function(result){
+     var dataString = 'email='+$scope.data.email ;
+     $.ajax({
+          type: "POST",
+          url: "http://alphabetastic.com/app/cmail.php",
+          data: dataString,
+          cache: false,
+          success: function(result)
+            {
+                  if(result=="success")
+                      {
+                            var confirmPopup = $ionicPopup.alert
+                                        ({
+                                            title: "Password Changed Successfully",
+                                            template: 'Please check your email for the new password.'
+                                        });
+                            $location.path('/login');
+                            $scope.$apply();
+                      }
+                  else 
+                      {
+                            var confirmPopup = $ionicPopup.alert
+                                        ({
+                                            title: "Password Change Failed",
+                                            template: 'Please use your registered email id.'
+                                        });
+                      }
+              
 
-            var a = JSON.parse(result);
-            
-          $scope.poem1=result;          
-        }
-        }); //Ajax call ends
+            }
+          }); //Ajax call ends
 
 
-$location.path('/categoryLanding');
-$scope.$apply();
-}
+      
+      }
   });
 //------------------Controller for Categories Home Ends--------------------------------------
 
@@ -161,7 +266,7 @@ module.controller('categoryLandingCtrl', function($scope, $http, $ionicPopup,$ti
 
 "So here’s a little  about all sorts of mammals for you, <br> Arranged alphabetically from A-to-Z – you might discover something new, <br> And at the end of each funny mammalian rhyme you’ll find, <br> Some of the big words explained so they come easily to mind.",
 
-"Here’s hoping that you like Alphabetastic and all we’ve penned, <br> And that you’ll read it all over again once you’ve reached the end. <br> And in case you think we’ve missed a mammal in the world from, <br> Mail us with your thoughts at alphabetastic@smokingmirrormedia.com!"
+"Here’s hoping that you like Alphabetastic and all we’ve penned, <br> And that you’ll read it all over again once you’ve reached the end. <br> And in case you think we’ve missed a mammal in the world from, <br> Mail us with your thoughts at <a href='mailto:alphabetastic@smokingmirrormedia.com'>alphabetastic@smokingmirrormedia.com</a>!"
 
          ];
 
@@ -173,7 +278,7 @@ $scope.imgs=["A/armadillo.png","B/badger.png","C/camels.png",
                  "J/jaguar.png","K/kangaroo.png","L/leopard.png","M/monkey.png","N/narwhal.png",
                  "O/otter.png","P/pika.png","Q/quoll.png","R/rabbit.png",
                  "S/seal.png","T/tiger.png","U/uakari.png","V/vampire_bat.png","W/walrus.png",
-                 "X/wooly_mammoth.png","Y/yak.png","Z/zebra.png"];
+                 "X/woollymammoth.png","Y/yak.png","Z/zebra.png"];
 
  $scope.interval = 3500;
 
@@ -217,7 +322,7 @@ module.controller('alphabetsCtrl', function($scope, $location,$ionicPopup,$timeo
                   var dataString = 'username='+user ;
                   $.ajax({
                       type: "POST",
-                      url: "http://app.planeers.com/access.php",
+                      url: "http://alphabetastic.com/app/access.php",
                       data: dataString,
                       cache: false,
                       success: function(result){
@@ -269,7 +374,7 @@ var imgs={"A":"/armadillo.png",              "B":"/badger.png",              "C"
               "M":"/mandrill",              "N":"/narwhal",              "O":"/otter",
               "P":"/possum",              "Q":"/quoll",              "R":"/rabbit",
               "S":"/seal",              "T":"/tiger",              "U":"/uakari",
-              "V":"/vampire_bat",              "W":"/walrus",              "X":"/wooly_mammoth",
+              "V":"/vampire_bat",              "W":"/walrus",              "X":"/woollymammoth",
               "Y":"/yak",              "Z":"/zebra"
 
             };
@@ -286,7 +391,7 @@ var imgs={"A":"/armadillo.png",              "B":"/badger.png",              "C"
 
           $.ajax({
               type: "POST",
-              url: "http://app.planeers.com/poem_title.php",
+              url: "http://alphabetastic.com/app/poem_title.php",
               data: dataString,
               cache: false,
               success: function(result){
@@ -325,7 +430,7 @@ module.controller('poemCtrl', function($scope, $http, $ionicPopup, $location, $i
         //(alpha);
         $.ajax({
             type: "POST",
-            url: "http://app.planeers.com/poem.php",
+            url: "http://alphabetastic.com/app/poem.php",
             data: dataString,
             cache: false,
             success: function(result){
@@ -372,7 +477,7 @@ var alpha=  localStorage.getItem('alphabet');
     var dataString = 'cat=mammals&alphabet='+alpha ;
     $.ajax({
         type: "POST",
-        url: "http://app.planeers.com/image.php",
+        url: "http://alphabetastic.com/app/image.php",
         data: dataString,
         cache: false,
         success: function(result){
@@ -422,7 +527,7 @@ var alpha=  localStorage.getItem('alphabet');
     var dataString = 'cat=mammals&alphabet='+alpha ;
     $.ajax({
         type: "POST",
-        url: "http://app.planeers.com/meaning.php",
+        url: "http://alphabetastic.com/app/meaning.php",
         data: dataString,
         cache: false,
         success: function(result){
@@ -442,7 +547,12 @@ var alpha=  localStorage.getItem('alphabet');
         }
         }); //Ajax call ends
   
-    
+     $scope.toalphabets = function () 
+        {
+                localStorage.removeItem("alphabet");
+                $location.path('/alphabets'); 
+                  
+        }
     
   });
 
@@ -458,7 +568,7 @@ $scope.animals=[];
     var dataString = 'cat=mammals&alphabet='+alpha ;
     $.ajax({
         type: "POST",
-        url: "http://app.planeers.com/image.php",
+        url: "http://alphabetastic.com/app/image.php",
         data: dataString,
         cache: false,
         success: function(result){
@@ -482,7 +592,12 @@ $scope.animals=[];
    $scope.updateSlider = function () {
             $ionicSlideBoxDelegate.update(); //or just return the function
         }  
-    
+     $scope.toalphabets = function () 
+        {
+                localStorage.removeItem("alphabet");
+                $location.path('/alphabets'); 
+                  
+        }
   });
 
 //  ------------------------controller for animalGlossary ends----------------
@@ -503,12 +618,13 @@ module.controller('paymentsCtrl', function($scope,$cordovaInAppBrowser, $http,$r
 
         $scope.toPayment =function()
         {
-        
-
-                   $cordovaInAppBrowser.open('http://alphabetastic.com/merchantpayment/index.php?user='+user, '_blank', options)
+                  var url='http://alphabetastic.com/merchantpayment/index.php?user='+user;
+                
+                   var win=$cordovaInAppBrowser.open(url, '_blank', options)
                
                   .then(function(event) {
                      // success
+                     alert("success");
                      $location.path('/alphabets'); 
                          
                   })
@@ -518,8 +634,7 @@ module.controller('paymentsCtrl', function($scope,$cordovaInAppBrowser, $http,$r
                   });
 
                     $location.path('/alphabets'); 
-                  $scope.$apply();
-    
+                  
         }//toPayment function ends
     
     
@@ -529,3 +644,5 @@ module.controller('paymentsCtrl', function($scope,$cordovaInAppBrowser, $http,$r
 });
 
 //  ------------------------controller for animalGlossary ends----------------
+
+
